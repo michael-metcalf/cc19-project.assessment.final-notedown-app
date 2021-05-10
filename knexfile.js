@@ -1,5 +1,6 @@
 // Update with your config settings.
 require("dotenv").config();
+const knex = require("knex")
 
 const PGDB_USER = process.env.PGDB_USER;
 const PGDB_PW = process.env.PGDB_PW;
