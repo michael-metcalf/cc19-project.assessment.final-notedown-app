@@ -1,10 +1,5 @@
 // Update with your config settings.
 require("dotenv").config();
-const knex = require("knex")
-
-const PGDB_USER = process.env.PGDB_USER;
-const PGDB_PW = process.env.PGDB_PW;
-const PGDB_NAME = process.env.PGDB_NAME;
 
 module.exports = {
 
@@ -12,9 +7,9 @@ module.exports = {
     client: 'pg',
     connection: {
       host: 'localhost',
-      database: PGDB_NAME,
-      user:     PGDB_USER,
-      password: PGDB_PW
+      database: process.env.PGDB_NAME,
+      user:     process.env.PGDB_USER,
+      password: process.env.PGDB_PW
     },
     pool: {
       min: 2,
@@ -33,9 +28,9 @@ module.exports = {
     client: 'pg',
     connection: {
       host: 'localhost',
-      database: PGDB_NAME,
-      user:     PGDB_USER,
-      password: PGDB_PW
+      database: process.env.PGDB_NAME,
+      user:     process.env.PGDB_USER,
+      password: process.env.PGDB_PW
     },
     pool: {
       min: 2,
@@ -43,15 +38,18 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations'
+    },
+    seeds: {
+      directory: `${__dirname}/db/seeds`
     }
   },
 
   production: {
     client: 'pg',
     connection: {
-      database: PGDB_NAME,
-      user:     PGDB_USER,
-      password: PGDB_PW
+      database: process.env.PGDB_NAME,
+      user:     process.env.PGDB_USER,
+      password: process.env.PGDB_PW
     },
     pool: {
       min: 2,
