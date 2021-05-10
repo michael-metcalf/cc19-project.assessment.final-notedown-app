@@ -1,4 +1,5 @@
 // Update with your config settings.
+require("dotenv").config();
 
 const PGDB_USER = process.env.PGDB_USER;
 const PGDB_PW = process.env.PGDB_PW;
@@ -7,7 +8,7 @@ const PGDB_NAME = process.env.PGDB_NAME;
 module.exports = {
 
   development: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       host: 'localhost',
       database: PGDB_NAME,
@@ -28,7 +29,7 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       host: 'localhost',
       database: PGDB_NAME,
@@ -45,7 +46,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
       database: PGDB_NAME,
       user:     PGDB_USER,
