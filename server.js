@@ -13,7 +13,7 @@ app.get("/*", (req, res) => {
 app.get("/api/notes", async (req, res) => {
   try {
   const response = await knex.select().table("notes");
-  console.log(response.body);
+  console.log(response);
   res.status(200);
   res.send(response);
   } catch (err) {
