@@ -11,5 +11,5 @@ app.get("/*", (req, res) => {
 });
 
 app.listen(PORT || 3000, () => {
-  console.log(`🎉 Listening on PORT ${port}`);
+  console.log(`🎉 Listening on PORT ${PORT}`);
 })
