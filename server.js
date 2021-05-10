@@ -13,14 +13,15 @@ app.get("/*", (req, res) => {
 app.get("/api/notes", async (req, res) => {
   try {
   const response = await knex.select().table("notes");
-  console.log(response);
+  console.log(response.body);
   res.status(200);
+  res.send(response);
   } catch (err) {
     console.error(err);
   }
 });
 
-const PORT = 3000;
-app.listen(PORT || 3000, () => {
+const PORT = 3001;
+app.listen(PORT || 3001, () => {
   console.log(`🎉 Listening on PORT ${PORT}`);
 });
